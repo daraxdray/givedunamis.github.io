@@ -298,7 +298,6 @@ var currency = [
                                                     
    '($)',
 ]
-
 new Vue({
     el:"#app",
     data:{
@@ -307,6 +306,8 @@ new Vue({
         show:false,
         usr:{
             phone:'',
+            reference:'',
+            address:'',
             firstname:'',
             lastname:'',
             email:'',
@@ -316,6 +317,12 @@ new Vue({
         },
         currency: currency
 
+    },
+
+    computed:{
+        fullname(){
+            return this.usr.firstname + ' ' + this.usr.lastname
+        }
     },
 methods:{
     goto(){
