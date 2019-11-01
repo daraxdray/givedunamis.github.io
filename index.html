@@ -39,11 +39,11 @@
 
 </head>
 
-<body style="background: url('img/background.jpg') no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
-background-size: cover;
--o-background-size: cov">
+<body style="background: url('img/background.gif') no-repeat center center fixed;
+-webkit-background-size: contain;
+-moz-background-size: contain;
+background-size: contain;
+-o-background-size: contain">
 	<div id="app">
 	<div id="preloader">
 		<div data-loader="circle-side"></div>
@@ -93,8 +93,8 @@ background-size: cover;
 					<div id="left_form" class="h-100 text-center" style="background-color: black; opacity: 0.9;">
 						<figure><img src="img/logo.png" alt="" width="150" height="100"></figure>
 						<h2>DUNAMIS ONLINE GIVING</h2>
-						<figure><img src="img/give.png" alt="" width="50" height="50"></figure>
 						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
+						
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -879,11 +879,11 @@ background-size: cover;
 																															
 																			<option value="146">(﷼) Yemeni Rial</option>								
 																															
-																			<option value="(R) Rand">(R) Rand</option>								
+																			<option value="147">(R) Rand</option>								
 																															
-																			<option value="(ZK) Zambian Kwacha">(ZK) Zambian Kwacha</option>								
+																			<option value="148">(ZK) Zambian Kwacha</option>								
 																															
-																			<option value="($) Zimbabwe Dollar">($) Zimbabwe Dollar</option>
+																			<option value="149">($) Zimbabwe Dollar</option>
 																		</select>
 																	</div>
 																</div>
@@ -893,85 +893,18 @@ background-size: cover;
 															
 						
 																
-																<!-- /row -->
-							
-																<div class="row">
 																
-																		<div class="col">
-																			<div class="form-group ">
-																					<label for="amount">Amount</label>
-																				<input type="text" id="amount" class="form-control" v-model="amount" value="00.00" placeholder="00.00">
-				
-																				</select>
-																			</div>
-																			</div>
-																	
-																		</div>	  
-											
 										
 										</div>
 										<!-- /step-->
 								<div class="step">
 									<h3 class="main_question"><strong>2/4</strong>Please select your giving type</h3>
 									<div class="btn-group">
-											<button class="btn btn-secondary " :class="{active:one}" @click.prevent="one=true">
-											   One time Giving
-											</button>
-											<button class="btn btn-secondary" :class="{active:!one}" @click.prevent="one=false" > Recursive Deposit
-											</button>
-											
 										  </div>
 
 										  <div class="pt-3">
-				<div v-if="!one"> 
-									<!-- /row -->
-														<div class="row">
-																
-																<div class="col-4">
-																	<div class="form-group ">
-																			<label for="recurFreq">Frequency</label>
-																		<select id="recurReq" class="form-control" v-model="timeRate">
-																			<option disabled value="select">Select Frequency</option>
-																			<option value="daily">Daily</option>
-																			<option value="weekly">Weekly</option>
-																			<option value="monthly">Monthly</option>
-																		</select>
-																	</div>
-																	</div>
-																<div class="col-6">
-																	<div class="form-group " v-if="show">
-																			<label for="recurFreq">How many times {{ timeRate }}</label>
-																		<input v-model="usr.times" type="number" class="form-control" name="times" required>
-																	</div>
-																	</div>
-																</div>
-														<div class="row">
-																
-															
-														<div class="col-6">
-															<div class="form-group ">
-																	<label for="recurRef">Reference</label>
-																	<select id="recurRef" class="form-control">
-																		<option value="tithe">Tithe</option>
-																		<option value="offering">Offering</option>
-																		<option value="donation">Donation</option>
-																	</select>
-															</div>
-														</div>
-
-
-													<div class="row">
-															<div class="col">
-																<div class="form-group">
-																		<label for="recurTel">Telephone</label>
-																	<input type="text" v-model="usr.phone" id="recurTel" name="telephone" class="form-control" placeholder="Your Telephone" required/> 
-																</div>	
-															</div>
-														</div>
-													</div>
-							
-				</div>
-				<div v-else>
+				
+				<div >
 											  
 													<div class="row">
 																
@@ -979,22 +912,29 @@ background-size: cover;
 																<div class="form-group ">
 																		<label for="oneRef">Reference</label>
 																	<select id="oneRef" class="form-control" v-model="usr.reference">
-																		<option>Tithe</option>
-																		<option>Offering</option>
-																		<option>Donation</option>
+																		<option value="" disabled selected>Tithe</option>
+																		<option value="tithe" >Tithe</option>
+																		<option value="offering">Offering</option>
+																		<option value="donation">Donation</option>
 																	</select>
 																</div>
 															</div>
 													</div>
+
 													<div class="row">
 															<div class="col-6">
 																<div class="form-group">
-																		<label for="oneTel">Telephone</label>
-																	<input type="text" id="oneTel" name="telephone" class="form-control" v-model="usr.phone" placeholder="Your Telephone" required/> 
+																		<label for="oneTel">Amount</label>
+																		<div class="input-group">
+																			<span class="input-group-addon">{{formatCurrency(usr.currency)}}</span>
+																			<input type="number" value="000.000" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="currency form-control" id="c1" />
+																</div>
+																	</div> 
 																</div>	
 															</div>
-														</div>
 													
+													
+												
 			</div>			
 		</div>
 								</div>
@@ -1004,12 +944,12 @@ background-size: cover;
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="firstname" v-model="usr.firstname" class="form-control required" placeholder="First name">
+												<input type="text" name="firstname" v-model="usr.firstname" class="form-control" placeholder="First name">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="lastname" v-model="usr.lastname" class="form-control required" placeholder="Last name">
+												<input type="text" name="lastname" v-model="usr.lastname" class="form-control" placeholder="Last name">
 											</div>
 										</div>
 									</div>
@@ -1018,7 +958,7 @@ background-size: cover;
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="email" name="email" v-model="usr.email" class="form-control required" placeholder="Your Email">
+												<input type="email" name="email" v-model="usr.email" class="form-control" placeholder="Your Email">
 											</div>
 										</div>
 										<div class="col-md-6">
@@ -1026,7 +966,7 @@ background-size: cover;
 												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone" :value="usr.phone">
 											</div>
 										</div>
-									</div>
+									
 									<!-- /row -->
 
 									<!-- <div class="row">
@@ -1042,62 +982,49 @@ background-size: cover;
 								</div>
 								<!-- /step-->
 
-								<div class="step">
-									<h3 class="main_question"><strong>4/4</strong>Please fill with additional info</h3>
-									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<input type="text" name="address" class="form-control required" placeholder="Address">
-											</div>
-										</div>
-										<!-- /col-sm-12 -->
-									</div>
-									<!-- /row -->
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="text" name="city" class="form-control required" placeholder="City">
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<input type="text" name="zip_code" class="form-control required" placeholder="Zip code">
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<div class="styled-select">
-													<select class="required" name="country">
-														<option :value="usr.country" selected>{{usr.country}}</option>
-	
-													</select>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
 								</div>
 								<!-- /step-->
 
 								<div class="submit step">
-									<h3 class="main_question"><strong>3/3</strong>Send an optional message</h3>
-									<div class="form-group">
-										<textarea name="additional_message" class="form-control" style="height:150px;" placeholder="Hello world....write your messagere here!"></textarea>
-									</div>
-									<div class="form-group terms">
-										<input name="terms" type="checkbox" class="required" value="yes">
-										<label>Please accept <a href="#" data-toggle="modal" data-target="#terms-txt">terms and conditions</a> ?</label>
-									</div>
+									<h3 class="main_question"><strong>3/3</strong>Payment Overview/h3>
+										
+										<table class="table table-striped">
+												<thead>
+												  <tr>
+													<th scope="col">#</th>
+													<th scope="col">First</th>
+													<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+												  </tr>
+												</thead>
+												<tbody>
+												  <tr>
+													<th scope="row">1</th>
+													<td>Mark</td>
+													<td>Otto</td>
+													<td>@mdo</td>
+												  </tr>
+												  <tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												  </tr>
+												  <tr>
+													<th scope="row">3</th>
+													<td>Larry</td>
+													<td>the Bird</td>
+													<td>@twitter</td>
+												  </tr>
+												</tbody>
+											  </table>	
 								</div>
 								<!-- /step-->
 							</div>
 							<!-- /middle-wizard -->
 							<div id="bottom-wizard">
 								<button type="button" name="backward" class="backward">Backward </button>
-								<button type="button" name="forward" class="forward">Forward</button>
+								<button type="button" name="forward" class="forward">Next</button>
 								<button type="submit" @click.prevent="goto" name="process" class="submit">Pay</button>
 							</div>
 							<!-- /bottom-wizard -->
