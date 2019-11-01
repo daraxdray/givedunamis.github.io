@@ -16,10 +16,8 @@ new Vue({
 
     },
 methods:{
-    changeFrequency(data){
-        this.show = true;
-        this.frequency = data
-
+    goto(){
+        window.location = "registration_send.html"
     }
 },
     watch:{

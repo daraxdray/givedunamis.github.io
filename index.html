@@ -879,7 +879,7 @@
 																															
 																			<option value="148">(ZK) Zambian Kwacha</option>								
 																															
-																			<option value="149">($) Zimbabwe Dollar</option>
+																			<option value="($) Zimbabwe Dollar">($) Zimbabwe Dollar</option>
 																		</select>
 																	</div>
 																</div>
@@ -891,7 +891,18 @@
 																
 																<!-- /row -->
 							
-												  
+																<div class="row">
+																
+																		<div class="col-4">
+																			<div class="form-group ">
+																					<label for="amount">Amount</label>
+																				<input type="text" id="amount" class="form-control" v-model="amount" value="00.00" placeholder="00.00">
+				
+																				</select>
+																			</div>
+																			</div>
+																	
+																		</div>	  
 											
 										
 										</div>
@@ -1083,7 +1094,7 @@
 							<div id="bottom-wizard">
 								<button type="button" name="backward" class="backward">Backward </button>
 								<button type="button" name="forward" class="forward">Forward</button>
-								<button type="submit" name="process" class="submit">Pay</button>
+								<button type="submit" @click.prevent="goto" name="process" class="submit">Pay</button>
 							</div>
 							<!-- /bottom-wizard -->
 						</form>
