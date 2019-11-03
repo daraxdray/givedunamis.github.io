@@ -40,14 +40,14 @@
 <!--paystack-->
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <!--flutterwave-->
-<script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+<script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 </head>
 
-<body style="background: url('img/background.gif') no-repeat center center fixed;
--webkit-background-size: contain;
--moz-background-size: contain;
-background-size: contain;
--o-background-size: contain">
+<body style="background: url('img/bg6.gif') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover">
 	<div id="app">
 	<div id="preloader">
 		<div data-loader="circle-side"></div>
@@ -164,7 +164,7 @@ background-size: contain;
 															<div class="col">
 																<div class="form-group ">
 																		
-																	<select id="oneRef" class="form-control" v-model="usr.reference">
+																	<select id="oneRef" class="form-control" v-model="usr.giveType" required>
 																		<option value="">select giving type</option>
 																		<option value="tithe" >Tithe</option>
 																		<option value="offering">Offering</option>
@@ -179,8 +179,8 @@ background-size: contain;
 																<div class="form-group">
 																		<label for="oneTel">Amount</label>
 																		<div class="input-group">
-																			<span class="input-group-addon">{{formatCurrency(usr.currency)}}</span>
-																			<input type="number" placeholder="000.000" value="" min="0" step="0.01"  class="currency form-control" id="c1" v-model="usr.amount" />
+																			<span class="input-group-addon">{{usr.currency}}</span>
+																			<input type="number" placeholder="000.000" value="" min="0" step="0.01"  class="currency form-control" id="c1" v-model="usr.amount" required />
 																</div>
 																	</div> 
 																</div>	
@@ -202,13 +202,11 @@ background-size: contain;
 				<div >
 											  
 													<div class="row">
-																
 															<div class="col" :class="[isPayFlutter? 'bg-secondary':'']" @click="selectedPay(1)">
-																<a href="#" > <img src="img/flw2.png" class="c_img" ></a>
-																
+																 <img src="img/flw2.png" class="c_img" >																
 															</div>
-															<div class="col" :class="[isPayPaystack? 'bg-secondary':'']" @click="selectedPay(2)">
-																<a href="#"><img src="img/paystack.png" class="c_img" ></a>
+															<div class="col" v-if="isAvailableMerchant()" :class="[isPayPaystack? 'bg-secondary':'']" @click="selectedPay(2)">
+																<img src="img/paystack.png" class="c_img" >
 															</div>
 													</div>
 
@@ -224,19 +222,19 @@ background-size: contain;
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="firstname" v-model="usr.firstname" class="form-control" placeholder="First name">
+												<input type="text" name="firstname" v-model="usr.firstname" class="form-control" placeholder="First name" required>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="lastname" v-model="usr.lastname" class="form-control" placeholder="Last name">
+												<input type="text" name="lastname" v-model="usr.lastname" class="form-control" placeholder="Last name" required>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="address" v-model="usr.address" class="form-control" placeholder="Address">
+												<input type="text" name="address" v-model="usr.address" class="form-control" placeholder="Address" required>
 											</div>
 										</div>
 									</div>
@@ -245,12 +243,12 @@ background-size: contain;
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="email" name="email" v-model="usr.email" class="form-control" placeholder="Your Email">
+												<input type="email" name="email" v-model="usr.email" class="form-control" placeholder="Your Email" required>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone" v-model="usr.phone">
+												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone" v-model="usr.phone" required>
 											</div>
 										</div>
 										<div class="form-group terms">

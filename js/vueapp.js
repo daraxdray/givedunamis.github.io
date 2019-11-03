@@ -1,304 +1,3 @@
-
-var currency = [
-    '(Af)',								
-																				
-   '(L)',								
-                                                    
-   '(Kz)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '(ƒ)',								
-                                                    
-   '(ман)',								
-                                                    
-   '(КМ)',								
-                                                    
-   '($)',								
-                                                    
-   '(৳)',								
-                                                    
-   '(лв)',								
-                                                    
-   '(ب.د)',								
-                                                    
-   '(₣)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '(Bs.)',								
-                                                    
-   '(R$)',								
-                                                    
-   '($)',								
-                                                    
-   '()',								
-                                                    
-   '(P)',								
-                                                    
-   '(Br)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '(₣)',								
-                                                    
-   '(₣)',								
-                                                    
-   '($)',								
-                                                    
-   '(¥)',								
-                                                    
-   '($)',								
-                                                    
-   '(₡)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '(Kč)',								
-                                                    
-   '(₣)',								
-                                                    
-   '(kr)',								
-                                                    
-   '($)',								
-                                                    
-   '(د.ج)',								
-                                                    
-   '(£)',								
-                                                    
-   '(Nfk)',								
-                                                    
-   '()',								
-                                                    
-   '(€)',								
-                                                    
-   '($)',								
-                                                    
-   '(£)',								
-                                                    
-   '(£)',								
-                                                    
-   '(ლ)',								
-                                                    
-   '(₵)',								
-                                                    
-   '(£)',								
-                                                    
-   '(D)',								
-                                                    
-   '(₣)',								
-                                                    
-   '(Q)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '(L)',								
-                                                    
-   '(Kn)',								
-                                                    
-   '(G)',								
-                                                    
-   '(Ft)',								
-                                                    
-   '(Rp)',								
-                                                    
-   '(₪)',								
-                                                    
-   '(₹)',								
-                                                    
-   '(ع.د)',								
-                                                    
-   '(﷼)',								
-                                                    
-   '(Kr)',								
-                                                    
-   '($)',								
-                                                    
-   '(د.ا)',								
-                                                    
-   '(¥)',								
-                                                    
-   '(Sh)',								
-                                                    
-   '()',								
-                                                    
-   '(៛)',								
-                                                    
-   '(₩)',								
-                                                    
-   '(₩)',								
-                                                    
-   '(د.ك)',								
-                                                    
-   '($)',								
-                                                    
-   '(〒)',								
-                                                    
-   '(₭)',								
-                                                    
-   '(ل.ل)',								
-                                                    
-   '(Rs)',								
-                                                    
-   '($)',								
-                                                    
-   '(L)',								
-                                                    
-   '(ل.د)',								
-                                                    
-   '(د.م.)',								
-                                                    
-   '(L)',								
-                                                    
-   '()',								
-                                                    
-   '(ден)',								
-                                                    
-   '(K)',								
-                                                    
-   '(₮)',								
-                                                    
-   '(P)',								
-                                                    
-   '(UM)',								
-                                                    
-   '(₨)',								
-                                                    
-   '(ރ.)',								
-                                                    
-   '(MK)',								
-                                                    
-   '($)',								
-                                                    
-   '(RM)',								
-                                                    
-   '(MTn)',								
-                                                    
-   '($)',								
-                                                    
-   '(₦)',
-
-                        
-   '(C$)',								
-                                                    
-   '(kr)',								
-                                                    
-   '(₨)',								
-                                                    
-   '($)',								
-                                                    
-   '(ر.ع.)',								
-                                                    
-   '(B/.)',								
-                                                    
-   '(S/.)',								
-                                                    
-   '(K)',								
-                                                    
-   '(₱)',								
-                                                    
-   '(₨)',								
-                                                    
-   '(zł)',								
-                                                    
-   '(₲)',								
-                                                    
-   '(ر.ق)',								
-                                                    
-   '(L)',								
-                                                    
-   '(din)',								
-                                                    
-   '(р.)',								
-                                                    
-   '(₣)',								
-                                                    
-   '(ر.س)',								
-                                                    
-   '($)',								
-                                                    
-   '(₨)',								
-                                                    
-   '(£)',								
-                                                    
-   '(kr)',								
-                                                    
-   '($)',								
-                                                    
-   '(£)',								
-                                                    
-   '(Le)',								
-                                                    
-   '(Sh)',								
-                                                    
-   '($)',								
-                                                    
-   '(Db)',								
-                                                    
-   '(ل.س)',								
-                                                    
-   '(L)',								
-                                                    
-   '(฿)',								
-                                                    
-   '(ЅМ)',								
-                                                    
-   '(m)',								
-                                                    
-   '(د.ت)',								
-                                                    
-   '(T$)',								
-                                                    
-   '(₤)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '(Sh)',								
-                                                    
-   '(₴)',								
-                                                    
-   '(Sh)',								
-                                                    
-   '($)',								
-                                                    
-   '($)',								
-                                                    
-   '()',								
-                                                    
-   '(Bs F)',								
-                                                    
-   '(₫)',								
-                                                    
-   '(Vt)',								
-                                                    
-   '(T)',								
-                                                    
-   '(₣)',								
-                                                    
-   '($)',								
-                                                    
-   '(₣)',								
-                                                    
-   '(﷼)',								
-                                                    
-   '(R)',								
-                                                    
-   '(ZK)',								
-                                                    
-   '($)',
-]
 new Vue({
     el:"#app",
     data:{
@@ -307,20 +6,21 @@ new Vue({
         show:false,
         isPayFlutter:'',
         isPayPaystack:'',
+        display:false,
         API_publicKey:"FLWPUBK_TEST-c4f6ace72bd66767285d1da656847f8e-X",
         usr:{
             phone:'',
-            reference:'',
+            giveType:'',
             address:'',
             firstname:'',
             lastname:'',
             email:'',
             times:'',
             country:'Nigeria',
-            currency:'',
+            currency:'NGN',
             amount:''
+
         },
-        currency: currency,
         allCountries:''
 
     },
@@ -331,6 +31,13 @@ new Vue({
         }
     },
 methods:{
+
+    isAvailableMerchant(){
+        if(this.usr.currency=="NGN" || this.usr.currency == "USD"){
+            return true
+        }
+        return false
+    },
     getCountries(){
     axios.get('https://restcountries.eu/rest/v2/all')
     .then(res=>{
@@ -346,19 +53,19 @@ methods:{
         this.isPayFlutter = true
         this.isPayPaystack = false
         }
-        else{
+        else{           
             this.isPayPaystack = true
             this.isPayFlutter = false
-        }
+         }
     }
     ,
     paystackapp(){
         var inst = this; 
-        console.log(this.usr.amount)
+   
         var handler = PaystackPop.setup({
             key: 'pk_test_50c50bba0d09666cc46820850f20853b3628f06d',
             email: this.usr.email,
-            amount: 4000000,
+            amount: this.usr.amount,
             currency: this.usr.currency,
             metadata: {
                custom_fields: [
@@ -366,11 +73,32 @@ methods:{
                       display_name: "Mobile Number",
                       variable_name: "mobile_number",
                       value: this.usr.phone
+                  },
+                  {
+                      display_name: "Name",
+                      variable_name: "name",
+                      value: this.fullname
+                  },
+                  {
+                      display_name: "Address",
+                      variable_name: "address",
+                      value: this.usr.address
+                  },
+                  {
+                      display_name: "Country",
+                      variable_name: "country",
+                      value: this.usr.country
+                  },
+                  {
+                      display_name: "Give For",
+                      variable_name: "give",
+                      value: this.usr.giveType
                   }
+                 
                ]
             },
             callback: function(response){
-                alert('success. transaction ref is ' + response.reference);
+                window.location = "registration_send.html"
             },
             onClose: function(){
                 inst.$refs.paymentRes.click();
@@ -379,8 +107,6 @@ methods:{
           handler.openIframe();
     },
     raveapp(){
-        console.log('rave is active')
-       
             var x = getpaidSetup({
                 PBFPubKey: this.API_publicKey,
                 customer_email: this.usr.email,
@@ -400,7 +126,8 @@ methods:{
                         response.tx.chargeResponseCode == "00" ||
                         response.tx.chargeResponseCode == "0"
                     ) {
-                    this.goto()
+                        window.location = "registration_send.html"
+                        
                     } else {
                         // redirect to a failure page.
                     }
@@ -411,12 +138,9 @@ methods:{
         
     },
     goto(){
-       return window.location = "registration_send.html"
+        window.location = "registration_send.html"
     },
-    formatCurrency(value){
-      return this.currency[value-1]
 
-    }
 },
     watch:{
         timeRate(newValue,oldValue){

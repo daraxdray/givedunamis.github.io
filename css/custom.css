@@ -2,6 +2,14 @@
 /* Your custom styles below */
 /*============================================================================================*/
 
+.c_display{
+    transition: 0.5s;
+opacity: 1;
+}
+.c_no_display{
+opacity: 0;
+transition: 0.5s;
+}
 .c_container {
     position: relative;
     width: auto;
